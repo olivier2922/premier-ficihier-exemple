@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freelance money</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Freelance Money Calculator</h1>
+    </header>
+    <form class="form-calcul" methode="post">
+      <div class="section-calcul pricing">
+        <fieldset class="form-container">
+          <legend>Vos tarif</legend>
+          <div>
+            <label> TH </label>
+            <input
+              type="number"
+              name="TH"
+              id="TH"
+              placeholder="ex: 7"
+              min="0"
+            />
+          </div>
+          <div>
+            <label> TJM </label>
+            <input
+              type="number"
+              name="TJM"
+              id="TJM"
+              placeholder="ex: 7"
+              min="0"
+            />
+          </div>
+          <div>
+            <label> Extra </label>
+            <input
+              type="number"
+              name="Extra"
+              id="Extra"
+              placeholder="ex: 7"
+              min="0"
+            />
+          </div>
+        </fieldset>
+      </div>
+      <div class="section-calcul qty">
+        <fieldset class="form-container">
+          <legend>Quantités</legend>
+          <div>
+            <label> TH </label>
+            <input
+              type="number"
+              name="Qty-TH"
+              id="QtyTH"
+              placeholder="ex: 7"
+              min="0"
+            />
+          </div>
+          <div>
+            <label> TJM </label>
+            <input
+              type="number"
+              name="Qty-TJM"
+              id="QtyTJM"
+              placeholder="ex: 7"
+              min="0"
+            />
+          </div>
+          <div>
+            <label> Extra </label>
+            <input
+              type="number"
+              name="Qty-Extra"
+              id="QtyExtra"
+              placeholder="ex: 7"
+              min="0"
+            />
+          </div>
+        </fieldset>
+      </div>
+      <div class="section-calcul fees">
+        <fieldset class="form-container">
+          <legend>Charges</legend>
+          <div>
+            <select name="charge" id="charge">
+              <option value="">-- Taux ACRE --</option>
+              <option value="5.5">5.5%</option>
+              <option value="11">11%</option>
+              <option value="16.5">16.5%</option>
+              <option value="22">22%</option>
+            </select>
+          </div>
+        </fieldset>
+      </div>
+      <div class="section-calcul validation">
+        <button id="calculate-btn">Calculer</button>
+      </div>
+      <div class="section-calcul" id="result"></div>
+    </form>
+
+    <p class="msg-error-paysage">
+      Veuillez repasser le mobile en mode portrait pour continuer à utliser le
+      calculateur...
+    </p>
+    <script src="script.js"></script>
+  </body>
+</html>

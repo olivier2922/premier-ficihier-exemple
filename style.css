@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    /* position: relative; */
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    background: url(./assets/img/mediamodifier-I3HPUolh5hA-unsplash.jpg) no-repeat center center / cover;
+    font-size: 1rem;
+}
+body::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    /* bottom: 0; */
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(28rem, 55vw, 45rem);
+    background: rgba(5, 149, 175, 0.144);
+    z-index: 2;
+}
+header{
+    text-align: center;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 26rem;
+}
+header h1{
+    position: relative;
+    z-index: 5;
+    line-height: 1.1;
+    letter-spacing: .2rem;
+    font-size: 3.3rem;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 3px 6px rgba(54, 54, 54, 0.377);
+    font-family: 'lobster', sans-serif;
+}
+.form-calcul{
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(20rem, 25vw, 45rem);
+    margin: 2rem auto;
+    border: 1px solid rgb(139, 139, 139);
+    padding: 1rem;
+    border-radius: .3rem;
+    background: linear-gradient(156deg, rgba(60,226,255,.2) 0%, rgba(44,232,209,.3) 35%, rgba(48,255,171,.2) 100%);
+
+}
+.form-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.section-calcul{
+    margin-top: 2rem;
+}
+
+input[type=number],
+select{
+    width: 3.7rem;
+    height: 2rem;
+    padding: .2rem .3rem .2rem .6rem;
+    border-radius: .3rem;
+    border: none;
+    outline: none;
+    font-size: inherit;
+}
+
+select{
+    margin-top: 1.5rem;
+    width: 10.5rem;
+    color: rgb(18, 58, 65);
+}
+
+fieldset {
+    height: 6.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border-radius: .3rem;
+    border: 1px solid #0596af;
+}
+
+fieldset legend{
+    margin-left: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: .3rem;
+    color: rgb(5, 150, 175);
+}
+fieldset > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+fieldset > div > label {
+    margin-bottom: .3rem;
+    color: rgb(18, 58, 65);
+    font-weight: 400;
+}
+
+.validation{
+    display: flex;
+    justify-content: center;
+}
+
+.validation button {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    border-radius: .3rem;
+    outline: none;
+    border: none;
+    font-size: inherit;
+    background-color: #0596af;
+    
+    color: white;
+    cursor: pointer;
+}
+.validation button,
+.form-calcul {
+    box-shadow: 0 3px 6px rgba(54, 54, 54, 0.637);
+    transition: box-shadow .3s ease-in-out;
+}
+.validation button:hover,
+.form-calcul:hover
+ {
+    box-shadow: none;
+}
+
+#result {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: .11rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+}
+#result.active{
+    opacity: 0;
+    position: relative;
+    bottom: -1.5rem;
+    animation: animRes .7s ease-out forwards;
+}
+.msg-error-paysage{
+    display: none;
+}
+@keyframes animRes {
+    to {
+    transform: translateY(-2rem);
+    opacity: 1;
+    }
+}
+
+@media screen and (max-width:500px){
+    body::after{
+        top: 0;
+        bottom: -5rem;
+    }
+    fieldset{
+        margin-right: 0;
+        margin-left: 0;
+    }
+    header{
+        max-width: 95vw;
+        margin-top: 2rem;
+    }
+    header h1{
+        font-size: 2.5rem;
+    }
+    .form-calcul{
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translate(0%, -50%);
+        max-width: 95vw;
+        margin: 0 auto
+    }
+}
+
+@media screen and (max-width:350px){
+    header h1{
+        font-size: 1.8rem;
+    }
+}
+@media screen and (max-width:350px){
+    header h1{
+        font-size: 1.8rem;
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-width:500px){
+
+    .form-calcul{
+        display: none;
+    }
+    .msg-error-paysage{
+        display: block;
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 1.3rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        background-color: #052b3186;
+        color: rgb(255, 255, 255);
+        padding: 1rem;
+        border-radius: .3rem;
+    }
+}
